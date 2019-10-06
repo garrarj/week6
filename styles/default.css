@@ -8,6 +8,10 @@
     --w: white;
     --offW: snow;
     --blue: #006991;
+    --deSatBlue: hsl(209, 50%, 58%);
+    --deSatBlue75: hsla(206, 50%, 58%, 0.75);
+    --deSatRed: hsl(0, 59%, 49%);
+    --deSatRed75: hsla(0, 59%, 49%, 0.75);
     --headerFont:'Merriweather', Georgia, serif;
     --bodyFont: 'Raleway', Arial, sans-serif;
     --nerdFont: 'Courier New', Courier, monospace;
@@ -60,6 +64,26 @@ main div{
     margin: 25px;
 }
 
+.float-container{
+    margin: 0px 25px;
+}
+
+.imgPara{
+    border: 1px solid var(--lg);
+}
+
+.imgPara img{
+    height: 100px;
+    width: 100px;
+}
+
+.redBox{
+    width: 500px;
+    height: 300px;
+    border: 10px solid var(--deSatRed);
+    background-color: var(--deSatRed75);
+}
+
 main div button{
     padding: 20px;
     border: none;
@@ -67,17 +91,6 @@ main div button{
     color: var(--w);
     font-variant: small-caps;
     font-style: oblique;
-}
-
-.image-container{
-    display: inline-block;
-    background-image: url("https://picsum.photos/200/300");
-    height: 300px;
-    width: 200px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 1px solid red;
 }
 
 main div input{
@@ -144,10 +157,6 @@ footer p{
         margin-top: 10px;
     }
 
-    /* Increasing the size of the image */
-    .image-container{
-        width: 90%;
-    }
 }
 
 /* Breakpoint: any viewport smaller than 650px will by styled by this declaration */
@@ -177,11 +186,6 @@ footer p{
         display: inline;
         position: relative;
         left: 175px;
-    }
-
-    /* removing the call to action button */
-    .call-to-action{
-        display: none;
     }
 
     /* removing the form fields... */
