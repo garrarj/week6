@@ -1,0 +1,22 @@
+/* The 'float' property in CSS can be used to place an element on the left or right of its container. In this example the containers ('one', 'two', and 'three') hold text and images. We can use the 'float' property to modify the display properties of the containers' images to place them on one side and have the text flow around it.  */
+
+.one img{
+    /* default is float: none; */
+    float: left;
+    margin-right: 10px;
+}
+
+.two img{
+    float: right;
+    margin-left: 10px;
+}
+
+.three img{
+    float: left;
+    margin-right: 10px;
+}
+
+/* Use clear on the affected element*/
+.three{
+    clear: right;
+}
