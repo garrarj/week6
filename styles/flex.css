@@ -1,54 +1,64 @@
 /* Flexbox display property in CSS excels at creating layouts that work in one direction (e.g. row or column). It allows us to dictate what axis you would like the content to follow (left/right or top/bottom) and assign content to positions within that axis */
 
-.flex-container{
-    display: flex;
+/* Flexbox display property in CSS excels at creating layouts that work in one direction (e.g. row or column). It allows us to dictate what axis you would like the content to follow (left/right or top/bottom) and assign content to positions within that axis */
 
-    /* Default flexx directiuon is 'row' */
+.flex-container{
+    /* We change the display property from the default to flex */
+    display: flex;
+    /* We define which direction we want the content to flow - row or column (default value is row) */
     flex-direction: column;
 }
 
 .flex-container span:nth-of-type(1){
     background-color: var(--deSatOrange75);
 }
+
 .flex-container span:nth-of-type(2){
     background-color: var(--deSatPurple75);
+    padding: 20px;
+    /* We wanted a nested flexbox for this container, so we change its display to flex */
     display: flex;
+    /* We define a direction */
     flex-direction: row;
+    /* We define alignment both on the main axis an across the main axis */
+    justify-content: center; /* 'justify-content' aligns content along the main axis (in this example, left to right) */
+    align-items: flex-end ; /* 'align-items' aligns content ACROSS the main axis (in this example, top to bottom) */
 
-    justify-content: flex-end;/* This affects the placememt of elements on the axis - flex-start, flex-end, center */
-    align-items: flex-end;/* this affects the placement of elements ACROSS axis */
-}
-.flex-container span:nth-of-type(3){
-    background-color: var(--deSatTeal75);
 }
 
+/* Targetting the divs within the second span and giving them some styles */
 .flex-container span:nth-of-type(2) div:nth-of-type(1){
-    height: 50px;
     width: 50px;
-    color: white;
+    height: 50px;
+    color: var(--w);
     background-color: red;
 }
 .flex-container span:nth-of-type(2) div:nth-of-type(2){
-    height: 50px;
     width: 50px;
-    color: white;
-    background-color: yellow;
-}
-.flex-container span:nth-of-type(2) div:nth-of-type(3){
-    height: 100px;
-    width: 100px;
-    color: white;
-    background-color: orange;
-}
-.flex-container span:nth-of-type(2) div:nth-of-type(4){
     height: 50px;
-    width: 50px;
-    color: white;
+    color: var(--w);
     background-color: blue;
 }
-.flex-container span:nth-of-type(2) div:nth-of-type(5){
-    height: 50px;
-    width: 50px;
-    color: white;
+.flex-container span:nth-of-type(2) div:nth-of-type(3){
+    width: 100px;
+    height: 100px;
+    color: var(--w);
     background-color: green;
+}
+.flex-container span:nth-of-type(2) div:nth-of-type(4){
+    width: 50px;
+    height: 50px;
+    color: var(--dg);
+    background-color: yellow;
+}
+.flex-container span:nth-of-type(2) div:nth-of-type(5){
+    width: 50px;
+    height: 50px;
+    color: var(--w);
+    background-color: purple;
+}
+
+/* styles for the third span */
+.flex-container span:nth-of-type(3){
+    background-color: var(--deSatTeal75);
 }

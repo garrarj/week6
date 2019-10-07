@@ -1,36 +1,45 @@
 /* using the display property 'grid' we can define columns and rows for our content. */
 
-body{
+.grids-container{
     display: grid;
+    /*We need to define our grid template - at a minimum, we need to define how many columns we want and how large they will be. 
+    We ca use many different units of measurement to define the width of our columns.
+    
+    E.G.
+    grid-template-columns: 20% 30% 50%; <== this will create three columns each taking up a different percentage of the parent
+    grid-template-columns: 50px 100px;  <== this will create two columns with different pixels widths
+    etc. 
+    etc. */
 
-    grid-template-columns: 1fr 1fr ;
-    grid-template-rows: 1fr 1fr ;
+    /* For this example we will the fraction value (fr) to create two columns of equal widths */
+    grid-template-columns: 1fr 1fr;
+    /* We can also define rows in a similar manner */
+    grid-template-rows: 1fr 1fr;
 
+    /* Grids gives us the ability to define a template which can be applied to elements within the container - using the 'grid-template-areas' property, we can assign names to the rows and columns we defined above. */
     grid-template-areas:
-    "header header"
-    "main sidebar"
-    "footer footer"
-    "social address"
+    "top top"
+    "left right"
     ;
-
-
 
 }
 
 /* Elements will be placed within the grid based on the order in which they are written */
-
 .grids-container span:nth-of-type(1){
-    background-color: var(--deSatRed75);
-    grid-column: 1 / span 2; /* Span will dictate how many columns this element will go across */
-    grid-area: header;
-}
-.grids-container span:nth-of-type(2){
-    background-color: var(--deSatBlue75);
-    grid-column: 1;
-    grid-area: main;
-}
-.grids-container span:nth-of-type(3){
+    /* Define which row you want the element to be placed */
+    grid-row: 1;
+    /* Define which column you want the element to be placed - if you want the element to be stretched across multiple columns, use the 'span' value to do so  */
+    grid-column: 1 / span 2;
     background-color: var(--deSatGreen75);
-    grid-column: 2;
-    grid-area: sidebar;
+}
+
+.grids-container span:nth-of-type(2){
+    /* A much simpler solution is to define what grid area you want the element to be placed in */
+    grid-area: right;
+    background-color: var(--deSatBlue75);
+}
+
+.grids-container span:nth-of-type(3){
+    grid-area: left;
+    background-color: var(--deSatRed75);
 }

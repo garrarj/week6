@@ -1,11 +1,13 @@
 /* The 'z-index' property in CSS affects the stacking order of elements on a page. when two elements are overlapping, the 'z-index' property allows you to dictate which elements is above another. */
 
 
+/* If we change the position property of an element, this also affects the stacking order of this element. In this case the red box will move over top of the header when we scroll through the page*/
 .redBox{
     position: relative;
     left: 400px;
 }
 
+/* We can rectify this by adjusting the increasing the stacking order of the header by one */
 header{
     z-index: 1;
 }
