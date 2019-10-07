@@ -1,0 +1,11 @@
+/* The 'z-index' property in CSS affects the stacking order of elements on a page. when two elements are overlapping, the 'z-index' property allows you to dictate which elements is above another. */
+
+
+.redBox{
+    position: relative;
+    left: 400px;
+}
+
+header{
+    z-index: 1;
+}
